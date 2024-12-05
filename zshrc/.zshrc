@@ -118,3 +118,5 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+export PATH="$PATH:$HOME/.dotnet/tools/"
+
