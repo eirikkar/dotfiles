@@ -1,0 +1,4 @@
+tmux/.tmux/plugins/
+tmuxifier/.tmuxifier/*
+!tmuxifier/.tmuxifier/templates/
+hypr/.config/hypr/scripts
