@@ -25,6 +25,6 @@ cursor_trail 3
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Dark Hard
+# Atom
 include current-theme.conf
 # END_KITTY_THEME
