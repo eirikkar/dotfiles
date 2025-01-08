@@ -2,3 +2,4 @@ tmux/.tmux/plugins/
 tmuxifier/.tmuxifier/*
 !tmuxifier/.tmuxifier/templates/
 hypr/.config/hypr/scripts
+waybar/.config/waybar/style
