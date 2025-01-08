@@ -26,8 +26,6 @@ pokemon-colorscripts --no-title -s -r
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
 #fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
 export PATH="$PATH:$HOME/.dotnet/tools/"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
