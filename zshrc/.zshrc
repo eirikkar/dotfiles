@@ -1,3 +1,5 @@
+export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$HOME/tools/yazi:$PATH"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -26,11 +28,13 @@ pokemon-colorscripts --no-title -s -r
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
 #fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
-export PATH="$PATH:$HOME/.dotnet/tools/"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 eval "$(zoxide init --cmd cd zsh)"
 export PATH="/home/eirik/.local/kitty.app/bin:$PATH"
+
+
+. "$HOME/.local/bin/env"
+export PATH="/home/eirik/.local/bin:$PATH"
