@@ -194,7 +194,7 @@
 		"title<.*reddit.*>": " ",
 		"title<.*Picture-in-Picture.*>": " ",
 		"class<firefox>": " ",
-		"class<kitty>": " ",
+		"class<kitty>": " ",
 		"class<kitty-dropterm>": " ",
 		"class<konsole>": " ",
 		"class<Chromium>": "<span font='12'> </span>",
