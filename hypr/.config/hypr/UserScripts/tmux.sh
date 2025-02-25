@@ -1,18 +1,18 @@
 #!/bin/bash
 # Name of the tmux session
 SESSION="default"
+term="/home/eirik/.local/kitty.app/bin/kitty"
 
-# Check if the session already exists. If it doesn't, create it.
 if ! tmux has-session -t "$SESSION" 2>/dev/null; then
-  # Create a new detached tmux session with the first window named "neovim"
-  tmux new-session -d -s "$SESSION" -n neovim
+  # Create a new detached tmux session with a window named 'neovim'
+  tmux new-session -d -s "$SESSION" "nvim --listen /tmp/nvim.sock"
   
-  # Create a second window (tab) in the session named "console"
-  tmux new-window -t "$SESSION:" -n console
+  # Create a second window (console) in the session.
+  tmux new-window -t "$SESSION:" 
   
-  # Optionally, select the first window so that it’s what you see on attach
+  # Optionally, select the first window.
   tmux select-window -t "$SESSION:0"
 fi
 
-# Launch kitty and attach to the tmux session
-kitty --class=tmux_terminal bash -c "tmux attach-session -t '$SESSION'"
+# Launch Kitty with a dedicated class then attach to tmux.
+$term --class=tmux_terminal bash -c "tmux attach-session -t '$SESSION'"
