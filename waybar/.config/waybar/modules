@@ -212,6 +212,8 @@
 		"class<codium|codium-url-handler|VSCodium>": "󰨞 ",
 		"class<codeblocks>": "󰅩 ",
 		"class<mousepad>": " ",
+    "class<tmux_terminal>": " ",
+    "class<vesktop>": " ",
 		"class<libreoffice-writer>": " ",
 		"class<libreoffice-startcenter>": "󰏆 ",
 		"class<com.obsproject.Studio>": " "
