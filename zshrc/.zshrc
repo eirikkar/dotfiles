@@ -34,7 +34,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 eval "$(zoxide init --cmd cd zsh)"
 export PATH="/home/eirik/.local/kitty.app/bin:$PATH"
-
+alias lg='/usr/local/bin/lazygit'
 
 . "$HOME/.local/bin/env"
 export PATH="/home/eirik/.local/bin:$PATH"
