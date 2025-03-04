@@ -36,6 +36,11 @@ eval "$(zoxide init --cmd cd zsh)"
 export PATH="/home/eirik/.local/kitty.app/bin:$PATH"
 alias lg='/usr/local/bin/lazygit'
 
+ft() {
+  "$HOME/scripts/tmux.sh" "$@"
+}
+
+
 . "$HOME/.local/bin/env"
 export PATH="/home/eirik/.local/bin:$PATH"
 
