@@ -37,9 +37,11 @@ export PATH="/home/eirik/.local/kitty.app/bin:$PATH"
 alias lg='/usr/local/bin/lazygit'
 
 ft() {
-  "$HOME/scripts/tmux.sh" "$@"
+  "$HOME/Workspace/scripts/tmux.sh" "$@"
 }
 
+alias checkin-hk="/home/eirik/Workspace/checkinbot/venv/bin/python /home/eirik/Workspace/checkinbot/main.py --location hjemmekontor"
+alias checkin="/home/eirik/Workspace/checkinbot/venv/bin/python /home/eirik/Workspace/checkinbot/main.py --location school"
 
 . "$HOME/.local/bin/env"
 export PATH="/home/eirik/.local/bin:$PATH"
