@@ -82,15 +82,15 @@ while true; do
   fi
 
   # Bluetooth status.
-  if bluetoothctl info 2>/dev/null | grep -q "Connected: yes"; then
-    bluetooth="Connected"
-  else
-    bluetooth="Disconnected"
-  fi
+  #if bluetoothctl info 2>/dev/null | grep -q "Connected: yes"; then
+  #  bluetooth="Connected"
+  #else
+  #  bluetooth="Disconnected"
+  #fi
 
   # Construct a JSON array of status items.
-  status_line=$(printf '[{"full_text": "Time: %s %s"}, {"full_text": "WiFi: %s"}, {"full_text": "RAM: %s"}, {"full_text": "Brightness: %s%%"}, {"full_text": "Battery: %s"}, {"full_text": "Volume: %s"}, {"full_text": "CPU: %s%%"}, {"full_text": "Temp: %s°C"}, {"full_text": "Bluetooth: %s"}]' \
-    "$current_time" "$current_date" "$wifi" "$ram" "$brightness_percent" "$battery" "$volume" "$cpu_usage" "$temp" "$bluetooth")
+  status_line=$(printf '[{"full_text": "Time: %s %s"}, {"full_text": "WiFi: %s"}, {"full_text": "RAM: %s"}, {"full_text": "Brightness: %s%%"}, {"full_text": "Battery: %s"}, {"full_text": "Volume: %s"}, {"full_text": "CPU: %s%%"}, {"full_text": "Temp: %s°C"}]' \
+    "$current_time" "$current_date" "$wifi" "$ram" "$brightness_percent" "$battery" "$volume" "$cpu_usage" "$temp" )
 
   if [ $first -eq 1 ]; then
     echo "$status_line"
