@@ -19,7 +19,10 @@ set $right l
 # Your preferred terminal emulator
 set $term /home/eirik/.local/kitty.app/bin/kitty
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu $HOME/.config/rofi/launchers/type-2/launcher.sh
+set $powermenu $HOME/.config/rofi/applets/bin/powermenu.sh
+set $screenshot $$HOME/.config/rofi/applets/bin/screenshot.sh
+
 
 ### Output configuration
 #
@@ -64,6 +67,7 @@ output * bg $HOME/Pictures/wallpapers/E09-05.png fill
 # Basics:
 #
     # Start a terminal
+    bindsym $mod+Ctrl+S exec $screenshot
     bindsym $mod+Return exec $term
     bindsym $mod+C exec Chromium
 
@@ -81,11 +85,10 @@ output * bg $HOME/Pictures/wallpapers/E09-05.png fill
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Ctrl+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
+    bindsym $mod+Ctrl+e exec $powermenu
 # Moving around:
 #
     # Move your focus around
