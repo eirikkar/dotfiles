@@ -65,9 +65,10 @@ output * bg $HOME/Pictures/wallpapers/E09-05.png fill
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+C exec Chromium
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+Ctrl+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
@@ -83,7 +84,7 @@ output * bg $HOME/Pictures/wallpapers/E09-05.png fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -222,7 +223,7 @@ bar {
   status_command ~/.config/sway/status.sh
 
   colors {
-    background #2E3440
+    background #1e1f1e
     statusline #ECEFF4
     separator  #5E81AC
     focused_workspace  #3B4252 #3B4252 #ECEFF4
