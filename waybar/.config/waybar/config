@@ -1,1 +1,132 @@
-/home/eirik/.config/waybar/configs/[TOP] Everforest
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "margin-top": 2,
+  
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "temperature",
+    "memory",
+    "battery",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "bluetooth"
+  ],
+  
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    },
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  
+  "clock": {
+    "format": " {:%H:%M:%S %d-%m-%Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1
+  },
+  
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "tooltip": true,
+    "interval": 1
+  },
+  
+  "temperature": {
+    "hwmon-path": "/sys/class/thermal/thermal_zone0/temp",
+    "critical-threshold": 80,
+    "format-critical": "󰈸 {temperatureC}°C",
+    "format": "󰈸 {temperatureC}°C"
+  },
+  
+  "memory": {
+    "format": "󰾆 {used:0.1f}G/{total:0.1f}G",
+    "interval": 3
+  },
+  
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": "󱘖 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  
+  "network": {
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": "󰌘 {ipaddr}/{cidr}",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "format-disconnected": "睊 Disconnected",
+    "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+    "interval": 5,
+    "on-click": "nm-connection-editor"
+  },
+  
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% 󰂰",
+    "format-bluetooth-muted": " 󰂰",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "󰕾", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  
+  "backlight": {
+    "device": "dp_aux_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+  
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱 {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
+  }
+}
