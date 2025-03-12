@@ -8,12 +8,19 @@ output eDP-1 {
   scale 1.7
   mode 2880x1620@120.00Hz
 }
+
 input "*" {
     xkb_layout us
     xkb_variant altgr-intl
 }
 
 
+
+input "1133:45095:ERGO_M575_Mouse" {
+    scroll_method on_button_down
+    scroll_button BTN_RIGHT
+    scroll_factor 2
+}
 
 ### Variables
 #
