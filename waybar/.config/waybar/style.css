@@ -4,32 +4,40 @@
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
     font-size: 14px;
     min-height: 0;
+    transition: 0.3s;
 }
 
 window#waybar {
-    background: #000000;
-    color: #ffffff;
+    background: #202124;
+    color: #e8eaed;
+    border-bottom: 1px solid #3c4043;
 }
 
 #workspaces button {
     padding: 0 5px;
-    background: #000000;
-    color: #ffffff;
+    background: #202124;
+    color: #9aa0a6;
     border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #222222;
-    border-bottom: 3px solid #ffffff;
+    background: #292b2e;
+    color: #e8eaed;
+    border-bottom: 3px solid #8ab4f8;
+}
+
+#workspaces button:hover {
+    background: #3c4043;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #f28b82;
+    color: #202124;
 }
 
 #mode {
-    background-color: #222222;
-    border-bottom: 3px solid #ffffff;
+    background-color: #292b2e;
+    border-bottom: 3px solid #8ab4f8;
 }
 
 #clock,
@@ -40,40 +48,37 @@ window#waybar {
 #backlight,
 #network,
 #pulseaudio,
-#bluetooth,
+#custom-bluetooth,
 #custom-notification,
 #tray {
     padding: 0 10px;
     margin: 0 5px;
+    color: #e8eaed;
 }
 
 #tray {
-    background-color: #0e0e0e;
+    background-color: #292b2e;
     padding: 0 8px;
     margin-left: 10px;
 }
 
-#tray menu {
-    background-color: #0e0e0e;
-}
-
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: #f28b82;
+    color: #202124;
 }
 
 #battery.charging, #battery.plugged {
-    color: #26A65B;
-    background-color: #0e0e0e;
+    color: #81c995;
 }
 
 #battery.warning:not(.charging) {
-    background-color: #ffbe61;
-    color: black;
+    background-color: #fdd663;
+    color: #202124;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: white;
+    background-color: #f28b82;
+    color: #202124;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -82,13 +87,17 @@ window#waybar {
 }
 
 #custom-notification {
-    color: #ffffff;
-    background-color: #3b8eea;
+    color: #202124;
+    background-color: #8ab4f8;
+}
+
+#network.disconnected {
+    color: #f28b82;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #e8eaed;
+        color: #202124;
     }
 }
