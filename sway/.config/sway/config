@@ -5,8 +5,11 @@
 # Read `man 5 sway` for a complete reference.
 for_window [app_id=".*"] border none
 output eDP-1 {
-  scale 1.8
+  scale 1.7
+  mode 2880x1620@120.00Hz
 }
+
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -21,8 +24,16 @@ set $term /home/eirik/.local/kitty.app/bin/kitty
 # Your preferred application launcher
 set $menu $HOME/.config/rofi/launchers/type-2/launcher.sh
 set $powermenu $HOME/.config/rofi/applets/bin/powermenu.sh
-set $screenshot $$HOME/.config/rofi/applets/bin/screenshot.sh
+set $screenshot $HOME/.config/rofi/applets/bin/screenshot.sh
+set $volume $HOME/.config/rofi/applets/bin/volume.sh
+set $discord $HOME/Workspace/scripts/launch-legcord.sh
 
+# Launch Blueman applications.
+exec --no-startup-id blueman-applet
+
+exec --no-startup-id swaymsg "workspace 2; exec kitty"
+
+exec --no-startup-id swaymsg "workspace 1; exec chromium"
 
 ### Output configuration
 #
@@ -69,7 +80,10 @@ output * bg $HOME/Pictures/wallpapers/E09-05.png fill
     # Start a terminal
     bindsym $mod+Ctrl+S exec $screenshot
     bindsym $mod+Return exec $term
-    bindsym $mod+C exec Chromium
+    bindsym $mod+C exec chromium --disable-gpu --disable-gpu-compositing
+    bindsym $mod+Ctrl+V exec $volume
+    bindsym $mod+Ctrl+M exec $discord
+
 
     # Kill focused window
     bindsym $mod+Ctrl+q kill
@@ -205,12 +219,12 @@ bindsym $mod+r mode "resize"
 #
     # Special keys to adjust volume via PulseAudio
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked $mod+F4 exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked $mod+F5 exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked $mod+F1 exec brightnessctl set 5%-
+    bindsym --locked $mod+F2 exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
