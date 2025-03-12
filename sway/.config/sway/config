@@ -8,6 +8,11 @@ output eDP-1 {
   scale 1.7
   mode 2880x1620@120.00Hz
 }
+input "*" {
+    xkb_layout us
+    xkb_variant altgr-intl
+}
+
 
 
 ### Variables
