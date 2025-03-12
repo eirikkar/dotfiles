@@ -35,6 +35,7 @@ exec --no-startup-id swaymsg "workspace 2; exec kitty"
 
 exec --no-startup-id swaymsg "workspace 1; exec chromium"
 
+exec_always nm-applet --indicator
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
@@ -232,22 +233,27 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
+
+bar { 
   position top
-  font "JetBrains Mono 10"
-
-  # Use the custom status command script for the status line.
-  status_command ~/.config/sway/status.sh
-
-  colors {
-    background #1e1f1e
-    statusline #ECEFF4
-    separator  #5E81AC
-    focused_workspace  #3B4252 #3B4252 #ECEFF4
-    active_workspace   #434C5E #434C5E #ECEFF4
-    inactive_workspace #2E3440 #2E3440 #D8DEE9
-    urgent_workspace   #BF616A #BF616A #ECEFF4
-  }
+  swaybar_command waybar
 }
-
+# bar {
+#   position top
+#   font "JetBrains Mono 10"
+#
+#   # Use the custom status command script for the status line.
+#   status_command ~/.config/sway/status.sh
+#
+#   colors {
+#     background #1e1f1e
+#     statusline #ECEFF4
+#     separator  #5E81AC
+#     focused_workspace  #3B4252 #3B4252 #ECEFF4
+#     active_workspace   #434C5E #434C5E #ECEFF4
+#     inactive_workspace #2E3440 #2E3440 #D8DEE9
+#     urgent_workspace   #BF616A #BF616A #ECEFF4
+#   }
+# }
+#
 include @sysconfdir@/sway/config.d/*
