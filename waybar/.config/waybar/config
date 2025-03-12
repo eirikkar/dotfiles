@@ -7,7 +7,8 @@
   
   "modules-left": [
     "sway/workspaces",
-    "sway/mode"
+    "sway/mode",
+    "tray"
   ],
   "modules-center": [
     "clock"
@@ -20,7 +21,8 @@
     "network",
     "pulseaudio",
     "backlight",
-    "bluetooth"
+    "bluetooth",
+    "custom-notification"
   ],
   
   "sway/workspaces": {
@@ -43,6 +45,11 @@
   
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
+  },
+  
+  "tray": {
+    "spacing": 10,
+    "icon-size": 18
   },
   
   "clock": {
@@ -76,8 +83,8 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": "󱘖 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
     "format-alt": "{icon} {time}",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
@@ -86,6 +93,7 @@
     "format-wifi": " {essid} ({signalStrength}%)",
     "format-ethernet": "󰌘 {ipaddr}/{cidr}",
     "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-wifi": " {essid} ({signalStrength}%)\nIP: {ipaddr}/{cidr}\nSpeed: {bandwidthUpBits} | {bandwidthDownBits}",
     "format-linked": "󰈁 {ifname} (No IP)",
     "format-disconnected": "睊 Disconnected",
     "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
@@ -113,7 +121,7 @@
   },
   
   "backlight": {
-    "device": "dp_aux_backlight",
+    "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-up": "brightnessctl set +5%",
@@ -128,5 +136,14 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueman-manager"
+  },
+  
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{}",
+    "interval": 1,
+    "exec": "waybar-notifications",
+    "exec-if": "which waybar-notifications",
+    "on-click": "dunstctl close-all"
   }
 }
