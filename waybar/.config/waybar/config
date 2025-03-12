@@ -21,8 +21,8 @@
     "network",
     "pulseaudio",
     "backlight",
-    "bluetooth",
-    "custom-notification"
+    "custom/bluetooth",
+    "custom/notification"
   ],
   
   "sway/workspaces": {
@@ -128,22 +128,18 @@
     "on-scroll-down": "brightnessctl set 5%-"
   },
   
-  "bluetooth": {
+  "custom/bluetooth": {
     "format": "󰂯",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱 {num_connections}",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
+    "interval": 1,
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "on-click": "blueman-manager",
+    "tooltip": true
   },
   
   "custom/notification": {
-    "tooltip": false,
     "format": "{}",
     "interval": 1,
-    "exec": "waybar-notifications",
-    "exec-if": "which waybar-notifications",
+    "exec": "~/.config/waybar/scripts/notification.sh",
     "on-click": "dunstctl close-all"
   }
 }
