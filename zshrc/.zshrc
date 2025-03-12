@@ -45,6 +45,7 @@ alias checkin="/home/eirik/Workspace/checkinbot/venv/bin/python /home/eirik/Work
 
 . "$HOME/.local/bin/env"
 export PATH="/home/eirik/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
