@@ -88,8 +88,8 @@ window#waybar {
 }
 
 #custom-notification {
-  color: #202124;
-  background-color: #8ab4f8;
+  color: #e8eaed;
+  background-color: #292b2e;
 }
 
 #network.disconnected {
