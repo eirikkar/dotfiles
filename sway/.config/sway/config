@@ -38,7 +38,7 @@ set $menu $HOME/.config/rofi/launchers/type-2/launcher.sh
 set $powermenu $HOME/.config/rofi/applets/bin/powermenu.sh
 set $screenshot $HOME/.config/rofi/applets/bin/screenshot.sh
 set $volume $HOME/.config/rofi/applets/bin/volume.sh
-set $discord $HOME/Workspace/scripts/launch-legcord.sh
+set $discord webcord --ozone-platform=wayland
 
 # Launch Blueman applications.
 exec --no-startup-id blueman-applet
