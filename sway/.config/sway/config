@@ -97,7 +97,7 @@ output * bg $HOME/Pictures/wallpapers/E09-05.png fill
     bindsym $mod+C exec chromium --disable-gpu --disable-gpu-compositing
     bindsym $mod+Ctrl+V exec $volume
     bindsym $mod+Ctrl+M exec $discord
-
+    bindsym $mod+Ctrl+n exec swaync-client -t -sw
 
     # Kill focused window
     bindsym $mod+Ctrl+q kill
