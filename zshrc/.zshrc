@@ -42,6 +42,7 @@ ft() {
 
 alias checkin-hk="/home/eirik/Workspace/checkinbot/venv/bin/python /home/eirik/Workspace/checkinbot/main.py --location hjemmekontor"
 alias checkin="/home/eirik/Workspace/checkinbot/venv/bin/python /home/eirik/Workspace/checkinbot/main.py --location school"
+alias webcord="webcord --ozone-platform=wayland"
 
 . "$HOME/.local/bin/env"
 export PATH="/home/eirik/.local/bin:$PATH"
