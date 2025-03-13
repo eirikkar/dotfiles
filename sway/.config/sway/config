@@ -19,7 +19,7 @@ input "*" {
 input "1133:45095:ERGO_M575_Mouse" {
     scroll_method on_button_down
     scroll_button BTN_RIGHT
-    scroll_factor 2
+    scroll_factor 1.2
 }
 
 ### Variables
@@ -48,6 +48,7 @@ exec --no-startup-id swaymsg "workspace 2; exec kitty"
 exec --no-startup-id swaymsg "workspace 1; exec chromium"
 
 exec_always nm-applet --indicator
+exec swaync
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
