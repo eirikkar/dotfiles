@@ -1,43 +1,43 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
-    font-size: 14px;
-    min-height: 0;
-    transition: 0.3s;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+  font-size: 14px;
+  min-height: 0;
+  transition: 0.3s;
 }
 
 window#waybar {
-    background: #202124;
-    color: #e8eaed;
-    border-bottom: 1px solid #3c4043;
+  background: #202124;
+  color: #e8eaed;
+  border-bottom: 1px solid #3c4043;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background: #202124;
-    color: #9aa0a6;
-    border-bottom: 3px solid transparent;
+  padding: 0 5px;
+  background: #202124;
+  color: #9aa0a6;
+  border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #292b2e;
-    color: #e8eaed;
-    border-bottom: 3px solid #8ab4f8;
+  background: #292b2e;
+  color: #e8eaed;
+  border-bottom: 3px solid #8ab4f8;
 }
 
 #workspaces button:hover {
-    background: #3c4043;
+  background: #3c4043;
 }
 
 #workspaces button.urgent {
-    background-color: #f28b82;
-    color: #202124;
+  background-color: #f28b82;
+  color: #202124;
 }
 
 #mode {
-    background-color: #292b2e;
-    border-bottom: 3px solid #8ab4f8;
+  background-color: #292b2e;
+  border-bottom: 3px solid #8ab4f8;
 }
 
 #clock,
@@ -51,53 +51,88 @@ window#waybar {
 #custom-bluetooth,
 #custom-notification,
 #tray {
-    padding: 0 10px;
-    margin: 0 5px;
-    color: #e8eaed;
+  padding: 0 10px;
+  margin: 0 5px;
+  color: #e8eaed;
 }
 
 #tray {
-    background-color: #292b2e;
-    padding: 0 8px;
-    margin-left: 10px;
+  background-color: #292b2e;
+  padding: 0 8px;
+  margin-left: 10px;
 }
 
 #temperature.critical {
-    background-color: #f28b82;
-    color: #202124;
+  background-color: #f28b82;
+  color: #202124;
 }
 
-#battery.charging, #battery.plugged {
-    color: #81c995;
+#battery.charging,
+#battery.plugged {
+  color: #81c995;
 }
 
 #battery.warning:not(.charging) {
-    background-color: #fdd663;
-    color: #202124;
+  background-color: #fdd663;
+  color: #202124;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f28b82;
-    color: #202124;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #f28b82;
+  color: #202124;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #custom-notification {
-    color: #202124;
-    background-color: #8ab4f8;
+  color: #202124;
+  background-color: #8ab4f8;
 }
 
 #network.disconnected {
-    color: #f28b82;
+  color: #f28b82;
 }
 
 @keyframes blink {
-    to {
-        background-color: #e8eaed;
-        color: #202124;
-    }
+  to {
+    background-color: #e8eaed;
+    color: #202124;
+  }
+}
+
+window#swaync {
+  background: #202124;
+  color: #e8eaed;
+  border: 1px solid #3c4043;
+  border-radius: 0;
+}
+
+window#swaync header {
+  background: #292b2e;
+  padding: 0 10px;
+  border-bottom: 1px solid #3c4043;
+  font-family: "JetBrainsMono Nerd Font",
+    "Font Awesome 6 Free";
+  font-size: 14px;
+  color: #e8eaed;
+}
+
+window#swaync .notifications-list {
+  padding: 0 10px;
+  margin: 0;
+}
+
+window#swaync .notification-item {
+  padding: 8px;
+  border-bottom: 1px solid #3c4043;
+  background-color: #202124;
+  color: #e8eaed;
+  transition: background 0.3s;
+}
+
+window#swaync .notification-item:hover {
+  background-color: #3c4043;
 }

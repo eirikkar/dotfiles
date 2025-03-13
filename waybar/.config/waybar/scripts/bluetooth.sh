@@ -1,6 +1,5 @@
 #!/bin/bash
 
-blueman-applet &
 if bluetoothctl show | grep -q "Powered: yes"; then
     connected_devices=$(bluetoothctl devices Connected | wc -l)
     if [ $connected_devices -gt 0 ]; then
