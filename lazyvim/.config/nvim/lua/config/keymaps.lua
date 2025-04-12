@@ -9,3 +9,10 @@ vim.api.nvim_set_keymap(
   [[<cmd>lua require("oil").toggle_float()<CR>]],
   { noremap = true, silent = true, desc = "Toggle Oil float" }
 )
+
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd hCR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+
+vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
